@@ -1,0 +1,7 @@
+/* The current LinkAd component identifies this affiliate banner as sponsored.
+   Keep video controls, ordinary links and access/purchase UI unchanged.
+   CSS also covers client-side navigation without installing page API hooks.
+   Source observations and limitations: ../docs/SEXKBJ_RESEARCH.md. */
+html.lae-active.lae-specific-active a[rel~="sponsored"][href^="https://t.vlmai-5.com/"] {
+  display: none !important;
+}

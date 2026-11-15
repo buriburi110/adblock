@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "priority": 1000,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||reqde.sooplive.com^",
+      "initiatorDomains": ["sooplive.com"],
+      "excludedResourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1000,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||adballoon.sooplive.com^",
+      "initiatorDomains": ["sooplive.com"],
+      "excludedResourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 1000,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||deapi.sooplive.com^",
+      "initiatorDomains": ["sooplive.com"],
+      "excludedResourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 4,
+    "priority": 1000,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||bjapi.sooplive.com/api/ad/",
+      "initiatorDomains": ["sooplive.com"],
+      "excludedResourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 5,
+    "priority": 1000,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||live.sooplive.com/api/get_ad.php",
+      "initiatorDomains": ["sooplive.com"],
+      "excludedResourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 6,
+    "priority": 1000,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||img-display.sooplive.com/creatives/",
+      "initiatorDomains": ["sooplive.com"],
+      "excludedResourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 7,
+    "priority": 1000,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||res.sooplive.com/script/da/af_da_block.js",
+      "initiatorDomains": ["sooplive.com"],
+      "excludedResourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 8,
+    "priority": 1000,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||res.sooplive.com/script/da/ad_check.js",
+      "initiatorDomains": ["sooplive.com"],
+      "excludedResourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 9,
+    "priority": 1000,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||static.sooplive.com/asset/service/ad/",
+      "initiatorDomains": ["sooplive.com"],
+      "excludedResourceTypes": ["main_frame"]
+    }
+  }
+]

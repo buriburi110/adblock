@@ -1,0 +1,14 @@
+html.lae-active ytd-ad-slot-renderer,
+html.lae-active ytd-in-feed-ad-layout-renderer,
+html.lae-active ytd-search-pyv-renderer,
+html.lae-active ytd-companion-slot-renderer,
+html.lae-active ytd-action-companion-ad-renderer,
+html.lae-active ytm-companion-ad-renderer,
+html.lae-active ad-slot-renderer,
+html.lae-active #masthead-ad,
+html.lae-active #movie_player .ytp-ad-overlay-container,
+html.lae-active #movie_player .ytp-ad-player-overlay,
+html.lae-active #movie_player .ytp-ad-image-overlay,
+html.lae-active yt-overlay-product-sticker {
+  display: none !important;
+}

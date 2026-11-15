@@ -1,0 +1,14 @@
+! SOOP subset of List-KR, copyright List-KR contributors, GNU GPLv3.
+! Commit: 9c2eab0a382be0d9c8716fcc363ba32b3ff36e62
+! Source paths and modifications: SOOP_NOTICE.md / soop.metadata.json.
+! Original filters below are preserved verbatim; this is NOT the complete list.
+||reqde.sooplive.com^
+||adballoon.sooplive.com^
+||deapi.sooplive.com^
+||bjapi.sooplive.com/api/ad/
+||live.sooplive.com/api/get_ad.php
+||img-display.sooplive.com/creatives/
+||res.sooplive.com/script/da/af_da_block.js
+||res.sooplive.com/script/da/ad_check.js
+||static.sooplive.com/asset/service/ad/
+vod.sooplive.com##+js(json-prune-xhr-response, data.adballoon, , propsToMatch, station/video/a/view)

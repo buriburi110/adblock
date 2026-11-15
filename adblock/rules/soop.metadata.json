@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "project": "List-KR",
+  "repository": "https://github.com/List-KR/List-KR",
+  "commit": "9c2eab0a382be0d9c8716fcc363ba32b3ff36e62",
+  "commitDate": "2026-09-30T22:18:35Z",
+  "verifiedAt": "2026-10-03",
+  "license": "GPL-3.0",
+  "sourceFiles": [
+    {
+      "path": "filterslists/adblocking/filters-share/3rd_domains.txt",
+      "sha256": "d937494eff3af20e2c72212ae5d081685ca7a3f40f9c1ac9e178da4df4a7bb3f",
+      "bytes": 4900,
+      "selectedLines": [79, 103, 187]
+    },
+    {
+      "path": "filterslists/adblocking/filters-share/specific_URL.txt",
+      "sha256": "9a7371f8a2f4badb8ed9c20d59b09370b781d8e60e8abe9c592e15f79981f6dd",
+      "bytes": 50385,
+      "selectedLines": [133, 297, 433, 758, 759, 843]
+    },
+    {
+      "path": "filterslists/adblocking/filters-uBO/scriptlets.txt",
+      "sha256": "a288a734325da452e2272159faaf06c1f224abcee462f5cf7bc3eed88527459a",
+      "bytes": 6130,
+      "selectedLines": [28]
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149
+    }
+  ],
+  "output": {
+    "rulesetId": "soop",
+    "path": "rules/soop.json",
+    "ruleCount": 9,
+    "sha256": "51dff896e5a118a5905a334cbb0a29fcf05a05eed49715b4244fdc45783a3a89",
+    "priority": 1000,
+    "initiatorDomains": ["sooplive.com"],
+    "excludedResourceTypes": ["main_frame"]
+  },
+  "scriptlet": {
+    "sourceFilter": "vod.sooplive.com##+js(json-prune-xhr-response, data.adballoon, , propsToMatch, station/video/a/view)",
+    "implementation": "sites/soop.js",
+    "implementationKind": "independent endpoint-scoped XHR and fetch implementation",
+    "pageHost": "vod.sooplive.com",
+    "responseUrl": "https://api.m.sooplive.com/station/video/a/view",
+    "removedPath": "data.adballoon"
+  }
+}

@@ -1,0 +1,360 @@
+:root {
+  color-scheme: light;
+  font-family:
+    Inter, Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #17211b;
+  background: #f7faf8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 340px;
+  min-height: 420px;
+  max-height: 600px;
+  overflow-y: auto;
+  margin: 0;
+  background:
+    radial-gradient(circle at 92% -4%, rgba(34, 197, 94, 0.18), transparent 34%),
+    #f7faf8;
+}
+
+.app {
+  padding: 16px 18px 14px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 14px;
+  color: #ffffff;
+  background: linear-gradient(145deg, #22c55e, #15803d);
+  box-shadow: 0 8px 18px rgba(21, 128, 61, 0.2);
+}
+
+.brand-mark svg {
+  width: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+h1 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.brand p {
+  margin: 3px 0 0;
+  color: #526159;
+  font-size: 12px;
+}
+
+.status-card {
+  min-height: 112px;
+  padding: 14px 16px;
+  border: 1px solid #dce8df;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px rgba(38, 72, 51, 0.07);
+  transition: border-color 160ms ease;
+}
+
+.status-card.is-paused {
+  border-color: #eadfce;
+}
+
+.status-card.is-unavailable {
+  border-color: #e2e5e3;
+}
+
+.status-card.is-notice {
+  border-color: #e5c98d;
+}
+
+.status-topline {
+  display: flex;
+  align-items: center;
+  margin-bottom: 11px;
+  color: #597064;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+}
+
+.is-paused .status-indicator,
+.is-unavailable .status-indicator {
+  background: #a8b1ac;
+  box-shadow: 0 0 0 4px rgba(113, 128, 120, 0.1);
+}
+
+.is-notice .status-indicator {
+  background: #b7791f;
+  box-shadow: 0 0 0 4px rgba(183, 121, 31, 0.12);
+}
+
+.count-pill {
+  margin-left: auto;
+  padding: 5px 8px;
+  border-radius: 999px;
+  color: #13723a;
+  background: #eaf9ef;
+  font-size: 11px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.is-paused .count-pill,
+.is-unavailable .count-pill {
+  color: #58635d;
+  background: #f0f2f1;
+}
+
+.is-notice .count-pill {
+  color: #744b12;
+  background: #fff5dc;
+}
+
+.status-card strong {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 18px;
+  letter-spacing: -0.035em;
+}
+
+.status-card p {
+  margin: 0;
+  color: #596860;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.controls {
+  margin-top: 10px;
+  padding: 4px 16px;
+  border: 1px solid #e1e9e4;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.control-row {
+  position: relative;
+  display: flex;
+  min-height: 56px;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.control-copy {
+  min-width: 0;
+  margin-right: auto;
+}
+
+.control-copy strong,
+.control-copy small {
+  display: block;
+}
+
+.control-copy strong {
+  font-size: 13px;
+  letter-spacing: -0.015em;
+}
+
+.control-copy small {
+  overflow: hidden;
+  margin-top: 4px;
+  color: #5d6b63;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.divider {
+  height: 1px;
+  background: #edf1ef;
+}
+
+.control-hint {
+  margin: 0 0 10px;
+  color: #5d6b63;
+  font-size: 11px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.hijack-summary {
+  color: #315c43;
+}
+
+.hijack-options {
+  border-top: 1px solid #edf1ef;
+  font-size: 11px;
+}
+
+.hijack-options summary {
+  padding: 10px 0;
+  color: #42584a;
+  cursor: pointer;
+}
+
+.compact-row {
+  min-height: 50px;
+}
+
+.hijack-reasons {
+  margin: 0 0 9px;
+  color: #526159;
+  font-size: 11px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.hijack-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.hijack-actions button {
+  min-height: 34px;
+  padding: 7px 9px;
+  border: 1px solid #cbdccf;
+  border-radius: 8px;
+  background: #eff8f1;
+  color: #245a37;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hijack-actions button:first-child {
+  flex: 1;
+}
+
+.hijack-actions button:disabled {
+  color: #818b84;
+  background: #f4f6f4;
+  cursor: not-allowed;
+}
+
+.hijack-actions button:focus-visible,
+.hijack-options summary:focus-visible {
+  outline: 2px solid #126b34;
+  outline-offset: 2px;
+}
+
+.action-hint {
+  margin-top: 8px;
+}
+
+.control-row input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.switch {
+  position: relative;
+  flex: 0 0 auto;
+  width: 42px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid #7c8982;
+  background: #d7ddd9;
+  transition: background 160ms ease;
+}
+
+.switch::after {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(25, 50, 34, 0.24);
+  content: "";
+  transition: transform 160ms ease;
+}
+
+input:checked + .switch {
+  background: #22a953;
+}
+
+input:checked + .switch::after {
+  transform: translateX(18px);
+}
+
+input:focus-visible + .switch {
+  outline: 3px solid #126b34;
+  outline-offset: 2px;
+}
+
+input:disabled + .switch {
+  opacity: 0.55;
+}
+
+.control-row.is-disabled {
+  cursor: not-allowed;
+}
+
+.privacy-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 10px 0 0;
+  color: #5f6d65;
+  font-size: 10px;
+}
+
+.privacy-note svg {
+  width: 13px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+@media (forced-colors: active) {
+  .switch {
+    border: 1px solid CanvasText;
+    background: Canvas;
+    forced-color-adjust: none;
+  }
+
+  input:checked + .switch {
+    background: Highlight;
+  }
+
+  .switch::after {
+    background: CanvasText;
+  }
+}

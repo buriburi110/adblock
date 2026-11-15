@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 2,
+  "importedAt": "2026-08-01T12:53:33.750Z",
+  "sourceExtension": {
+    "id": "gighmmpiobklfepjocnamgkkbiglidom",
+    "version": "6.44.0.1"
+  },
+  "filter": {
+    "id": "2708BCB7-2E45-41BC-B517-1730CF532F89",
+    "title": "KoreanList+EasyList",
+    "version": "202607270702",
+    "lastModified": "27 Jul 2026 07:02 UTC",
+    "homepage": "https://easylist.to/",
+    "license": "https://easylist.to/pages/licence.html",
+    "url": "https://easylist-downloads.adblockplus.org/v3/full/koreanlist+easylist.txt"
+  },
+  "source": {
+    "ruleCount": 56068,
+    "actionCounts": {
+      "allow": 566,
+      "allowAllRequests": 4,
+      "block": 55488,
+      "modifyHeaders": 3,
+      "redirect": 7
+    },
+    "dnrSha256": "a670f02639dc57e1553c47da8b2bf6885147ebb466db82a77638af9a8433c7c2",
+    "filterLineCount": 85108,
+    "filterSha256": "a8f238b776f77c120a18881dd5b98d6b0b578e9d7cfd9f37773e93a975763036"
+  },
+  "output": {
+    "ruleCount": 56058,
+    "actionCounts": {
+      "allow": 566,
+      "allowAllRequests": 4,
+      "block": 55488
+    },
+    "droppedActionCounts": {
+      "modifyHeaders": 3,
+      "redirect": 7
+    },
+    "sha256": "8e94fe5cbf54d2e1b36040b660087953d820c5a42eee128002077e3624544267",
+    "cosmetic": {
+      "parsedFilterCount": 24406,
+      "droppedFilterCount": 258,
+      "skippedBySyntax": {
+        "extended": 274,
+        "invalidDomain": 302,
+        "unsupportedSelector": 45
+      },
+      "exceptionSensitiveSelectorCount": 339,
+      "uncertainExceptionSelectorCount": 0,
+      "genericSelectorCount": 13360,
+      "conditionalGenericSelectorCount": 301,
+      "specificSelectorCount": 16701,
+      "exceptionSelectorCount": 658,
+      "elementHidingExceptions": {
+        "parsedFilterCount": 156,
+        "skippedFilterCount": 13,
+        "genericHideDisabledDomainCount": 182,
+        "elementHideDisabledDomainCount": 0
+      },
+      "genericCssSha256": "c07ecea217392013f85d30373d5214f5b5efaa293152dd45a228176ab5dcb994",
+      "specificRulesSha256": "935e99761d1c21eb0462113ef4958c61db2774b863e12e668db08d7595250493"
+    }
+  },
+  "notes": [
+    "원본 AdBlock 코드와 브랜드 자산은 복사하지 않습니다.",
+    "redirect와 modifyHeaders DNR 규칙은 안전한 독립 구현을 위해 제외합니다.",
+    "표준 CSS로 표현 가능한 기본 element-hiding 규칙만 가져오며 procedural/scriptlet 규칙은 제외합니다.",
+    "예외가 선언된 범용 선택자는 현재 문서의 도메인 예외를 계산한 뒤에만 적용합니다.",
+    "$generichide와 $elemhide의 호스트 단위 예외를 적용하며 경로·와일드카드 예외는 범위를 넓히지 않고 생략합니다.",
+    "생성 데이터의 출처와 라이선스는 rules/EASYLIST_NOTICE.md를 확인하세요."
+  ]
+}

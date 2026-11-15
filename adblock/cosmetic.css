@@ -1,0 +1,29 @@
+/* 네트워크에서 놓친 흔한 광고 자리만 보수적으로 숨깁니다. */
+/* 사용자가 제보한 클릭 덮개 표식. 무작위 클래스명/배경 이미지에는 의존하지
+   않습니다. DOM을 삭제하지 않아 전체/현재 사이트/납치 방지 OFF 시 복원됩니다.
+   납치 방지 상태는 hijack-guard.js가 관리하며 EasyList 숨김 예외와 별개입니다. */
+html.lae-hijack-active div[data-cl-overlay],
+html.lae-hijack-active [data-lae-hijack-blocked] {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+html.lae-active.lae-generic-active ins.adsbygoogle[data-ad-client],
+html.lae-active.lae-generic-active ins.adsbygoogle[data-ad-slot],
+html.lae-active.lae-generic-active .adsbygoogle-box,
+html.lae-active.lae-generic-active [id^="google_ads_"],
+html.lae-active.lae-generic-active [id^="div-gpt-ad"],
+html.lae-active.lae-generic-active [aria-label="Advertisement"],
+html.lae-active.lae-generic-active [aria-label="광고"],
+html.lae-active.lae-generic-active iframe[src*="doubleclick.net"],
+html.lae-active.lae-generic-active iframe[src*="googlesyndication.com"],
+html.lae-active.lae-generic-active iframe[src*="adnxs.com"],
+html.lae-active.lae-generic-active iframe[src*="taboola.com"],
+html.lae-active.lae-generic-active iframe[src*="outbrain.com"] {
+  display: none !important;
+  visibility: hidden !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}

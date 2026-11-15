@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "priority": 1000,
+    "action": { "type": "block" },
+    "condition": {
+      "regexFilter": "^https://04\\.avsee\\.is/player/ad-gate\\.js\\?v=1790860982$",
+      "isUrlFilterCaseSensitive": true,
+      "initiatorDomains": ["04.avsee.is"],
+      "resourceTypes": ["script"]
+    }
+  }
+]

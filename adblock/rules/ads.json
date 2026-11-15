@@ -1,0 +1,89 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "requestDomains": [
+        "2mdn.net",
+        "33across.com",
+        "adcolony.com",
+        "adform.net",
+        "adinc.co.kr",
+        "adnxs.com",
+        "adop.cc",
+        "adsafeprotected.com",
+        "adsrvr.org",
+        "advertising.com",
+        "adzerk.net",
+        "amazon-adsystem.com",
+        "appnexus.com",
+        "bidswitch.net",
+        "casalemedia.com",
+        "contextweb.com",
+        "criteo.com",
+        "criteo.net",
+        "dable.io",
+        "districtm.io",
+        "doubleclick.net",
+        "emxdgt.com",
+        "googleadservices.com",
+        "googlesyndication.com",
+        "gumgum.com",
+        "indexexchange.com",
+        "inmobi.com",
+        "lijit.com",
+        "loopme.me",
+        "media.net",
+        "mgid.com",
+        "moatads.com",
+        "openx.com",
+        "openx.net",
+        "outbrain.com",
+        "pubmatic.com",
+        "revcontent.com",
+        "rubiconproject.com",
+        "serving-sys.com",
+        "sharethrough.com",
+        "smaato.net",
+        "smartadserver.com",
+        "sonobi.com",
+        "spotxchange.com",
+        "taboola.com",
+        "teads.tv",
+        "triplelift.com",
+        "undertone.com",
+        "yieldlab.net",
+        "yieldmo.com",
+        "zedo.com"
+      ],
+      "resourceTypes": [
+        "font",
+        "image",
+        "media",
+        "object",
+        "other",
+        "ping",
+        "script",
+        "stylesheet",
+        "sub_frame",
+        "websocket",
+        "xmlhttprequest"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1000,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "||go.whitetrafsa.com/api/models/vast",
+      "initiatorDomains": ["sexkbj.tv"],
+      "resourceTypes": ["xmlhttprequest"]
+    }
+  }
+]

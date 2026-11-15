@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "project": "uBlock Origin Lite",
+  "release": "2026.729.1529",
+  "releaseUrl": "https://github.com/uBlockOrigin/uBOL-home/releases/tag/2026.729.1529",
+  "sourceRepository": "https://github.com/gorhill/uBlock",
+  "filterRepository": "https://github.com/uBlockOrigin/uAssets",
+  "license": "GPL-3.0-or-later",
+  "sourceArchiveSha256": "5b0df87ad6c98f9e706724384ab0167dfdadb0d753946894079e375d5f15ec16",
+  "files": [
+    {
+      "path": "vendor/ublock-origin-lite/ublock-filters-main.js",
+      "upstreamPath": "rulesets/scripting/scriptlet/main/ublock-filters.js",
+      "sha256": "153e025a22aa011df3e13ef4aedc8fd8f5cef3283ff3e25e5c5dc31765cfe6d4"
+    },
+    {
+      "path": "vendor/ublock-origin-lite/ublock-filters-isolated.js",
+      "upstreamPath": "rulesets/scripting/scriptlet/isolated/ublock-filters.js",
+      "sha256": "07c8bf32f17b083ce103646f3d976e6aee60771e87a1e5697d5e5957c0512d5f"
+    }
+  ]
+}

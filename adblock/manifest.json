@@ -1,0 +1,127 @@
+{
+  "manifest_version": 3,
+  "name": "가벼운 광고 차단기",
+  "version": "1.10.0",
+  "minimum_chrome_version": "122",
+  "description": "광고 네트워크 요청, 흔한 광고 영역, YouTube 플레이어 광고를 차단하는 가벼운 Chrome 확장 프로그램입니다.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "declarativeNetRequest",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://chzzk.naver.com/*",
+    "https://vod.sooplive.com/*",
+    "https://youtube.com/*",
+    "https://www.youtube.com/*",
+    "https://m.youtube.com/*",
+    "https://music.youtube.com/*",
+    "https://tv.youtube.com/*",
+    "https://www.youtube-nocookie.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    },
+    "default_popup": "popup/popup.html",
+    "default_title": "가벼운 광고 차단기"
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "match_about_blank": true,
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "css": [
+        "cosmetic.css",
+        "rules/cosmetic-generic.css"
+      ],
+      "js": [
+        "content.js",
+        "hijack-patterns.js",
+        "hijack-guard.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "all_frames": true,
+      "match_about_blank": true,
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["hijack-main.js"],
+      "world": "MAIN",
+      "run_at": "document_start"
+    },
+    {
+      "all_frames": true,
+      "matches": [
+        "https://youtube.com/*",
+        "https://www.youtube.com/*",
+        "https://m.youtube.com/*",
+        "https://music.youtube.com/*",
+        "https://tv.youtube.com/*",
+        "https://www.youtube-nocookie.com/*"
+      ],
+      "css": [
+        "youtube.css"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "all_frames": true,
+      "matches": [
+        "*://*.fmkorea.com/*"
+      ],
+      "css": [
+        "sites/fmkorea.css"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "all_frames": true,
+      "matches": [
+        "https://sexkbj.tv/*"
+      ],
+      "css": [
+        "sites/sexkbj.css"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "easylist",
+        "enabled": true,
+        "path": "rules/easylist.json"
+      },
+      {
+        "id": "ads",
+        "enabled": false,
+        "path": "rules/ads.json"
+      },
+      {
+        "id": "soop",
+        "enabled": true,
+        "path": "rules/soop.json"
+      },
+      {
+        "id": "player_compat",
+        "enabled": true,
+        "path": "rules/player-compat.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+! Reviewed subset, 2026-11-15. No runtime download or remote code execution.
+! Copyright: The EasyList authors, https://easylist.to/
+! License: GPL-3.0-or-later (selected from EasyList dual licensing).
+! https://easylist.to/pages/licence.html ; license text: ../LICENSE.txt
+! Sources:
+! https://raw.githubusercontent.com/easylist/easylist/master/easylist/easylist_adservers_popup.txt
+! https://raw.githubusercontent.com/easylist/easylist/master/easylist/easylist_general_block_popup.txt
+||popads.net^$popup
+||popcash.net^$popup
+||popmyads.com^$popup
+||popunder.bid^$popup
+||popunderjs.com^$popup
+||propellerpops.com^$popup
+/popunder/in/click/*$popup
+/popunder_$popup
+/popupads.$popup
+/links/popad$popup
+! Adaptation: only external HTTP(S) hostnames are considered; same-host destinations pass.
+! Domain rules: window.open, direct click/auxclick, and geometrically confirmed media covers.
+! Path rules: window.open only, using pathname rather than query/fragment substring matching.
+! This is NOT an implementation of the complete EasyList popup grammar/list.
