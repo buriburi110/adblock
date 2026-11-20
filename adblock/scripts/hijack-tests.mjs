@@ -36,7 +36,7 @@ await test("Hijack protection keeps permissions unchanged and separates isolated
   const isolated = manifest.content_scripts.find(entry => entry.js?.includes("hijack-guard.js"));
   const main = manifest.content_scripts.find(entry => entry.js?.includes("hijack-main.js"));
   assert.ok(isolated && main);
-  assert.deepEqual(isolated.js, ["content.js", "hijack-patterns.js", "hijack-guard.js"]);
+  assert.deepEqual(isolated.js, ["content.js", "ad-slot-media.js", "hijack-patterns.js", "hijack-guard.js"]);
   assert.deepEqual(main.js, ["hijack-main.js"]);
   assert.ok(readText("hijack-main.js").startsWith(readText("hijack-patterns.js").trim()),
     "The MAIN bundle must contain the identical portable classifier");

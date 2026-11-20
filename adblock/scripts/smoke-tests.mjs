@@ -237,7 +237,7 @@ async function testBackground() {
     disabledSites: ["Example.com", "example.com", "api.example.com"],
   };
   let dynamicRules = [];
-  let enabledRulesets = ["easylist", "soop", "player_compat"];
+  let enabledRulesets = ["easylist", "soop", "player_compat", "publisher_slots"];
   let actionOptions = null;
   let failNextPrimaryEnable = false;
   let registeredContentScripts = [];
@@ -547,7 +547,7 @@ async function testBackground() {
   });
 
   assert.equal(response.ok, true);
-  assert.deepEqual(enabledRulesets, ["easylist", "soop", "player_compat"]);
+  assert.deepEqual(enabledRulesets, ["easylist", "soop", "player_compat", "publisher_slots"]);
   assert.deepEqual(dynamicRules, []);
   assert.equal(actionOptions.displayActionCountAsBadgeText, true);
   assert.equal(registeredContentScripts.length, 4);
@@ -668,12 +668,17 @@ async function testBackground() {
   // 업데이트 전 설치본에 보조 ruleset이 없던 경우에도 복구합니다.
   enabledRulesets = ["easylist"];
   await sendBackgroundMessage({ type: "sync-settings" });
-  assert.deepEqual(enabledRulesets, ["easylist", "soop", "player_compat"]);
+  assert.deepEqual(enabledRulesets, ["easylist", "soop", "player_compat", "publisher_slots"]);
 
   // v1.9.4에서 업데이트되어 플레이어 호환 ruleset만 빠진 상태도 복구합니다.
   enabledRulesets = ["easylist", "soop"];
   await sendBackgroundMessage({ type: "sync-settings" });
-  assert.deepEqual(enabledRulesets, ["easylist", "soop", "player_compat"]);
+  assert.deepEqual(enabledRulesets, ["easylist", "soop", "player_compat", "publisher_slots"]);
+
+  // Upgrade from 1.10 with only the new publisher rules missing.
+  enabledRulesets = ["easylist", "soop", "player_compat"];
+  await sendBackgroundMessage({ type: "sync-settings" });
+  assert.ok(enabledRulesets.includes("publisher_slots"));
 
   settings.enabled = false;
   await new Promise((resolve) => {
@@ -688,11 +693,11 @@ async function testBackground() {
     events.onMessage.listeners[0]({ type: "sync-settings" }, {}, resolve);
   });
   assert.equal(fallbackResponse.ok, true);
-  assert.deepEqual(enabledRulesets, ["ads", "soop", "player_compat"]);
+  assert.deepEqual(enabledRulesets, ["ads", "soop", "player_compat", "publisher_slots"]);
   assert.equal(warnings.length, 1);
 
   await sendBackgroundMessage({ type: "sync-settings" });
-  assert.deepEqual([...enabledRulesets].sort(), ["easylist", "player_compat", "soop"]);
+  assert.deepEqual([...enabledRulesets].sort(), ["easylist", "player_compat", "publisher_slots", "soop"]);
   assert.equal(registeredContentScripts.length, 4);
 
   assert.deepEqual(sessionRules.map((rule) => rule.id), [2_000_001]);

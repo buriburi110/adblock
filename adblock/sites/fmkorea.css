@@ -1,5 +1,6 @@
 /* KoreanList의 오래된 #adpost 규칙을 보완하는 현재 FM코리아 전용 선택자입니다. */
 html.lae-active.lae-specific-active div.fmad_wrapper,
+html.lae-active.lae-specific-active #banner3:has(iframe[src^="https://loader.fmkorea.com/_loader/loader.php"]),
 html.lae-active.lae-specific-active iframe[src*="//cdn.nhnace.com/libs/aceadlib.html"],
 html.lae-active.lae-specific-active iframe[src*="//loader.fmkorea.com/"][src*="/loader.php"] {
   display: none !important;

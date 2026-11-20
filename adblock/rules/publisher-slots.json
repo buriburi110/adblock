@@ -1,0 +1,36 @@
+[
+  {
+    "id": 2,
+    "action": {"type": "block"},
+    "condition": {
+      "urlFilter": "||t1.kakaocdn.net/kas/static/ba.min.js^",
+      "resourceTypes": ["script"]
+    }
+  },
+  {
+    "id": 3,
+    "action": {"type": "block"},
+    "condition": {
+      "urlFilter": "||t1.daumcdn.net/kas/static/ba.min.js^",
+      "resourceTypes": ["script"]
+    }
+  },
+  {
+    "id": 4,
+    "action": {"type": "block"},
+    "condition": {
+      "initiatorDomains": ["fmkorea.com"],
+      "urlFilter": "||cdn.nhnace.com/libs/aceadlib.html^",
+      "resourceTypes": ["sub_frame"]
+    }
+  },
+  {
+    "id": 5,
+    "action": {"type": "block"},
+    "condition": {
+      "initiatorDomains": ["fmkorea.com"],
+      "urlFilter": "||loader.fmkorea.com/_loader/loader.php^",
+      "resourceTypes": ["sub_frame"]
+    }
+  }
+]

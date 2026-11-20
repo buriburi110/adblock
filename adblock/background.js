@@ -2,11 +2,11 @@ const PRIMARY_RULESET_ID = "easylist";
 const FALLBACK_RULESET_ID = "ads";
 const SOOP_RULESET_ID = "soop";
 const PLAYER_COMPAT_RULESET_ID = "player_compat";
+const SUPPLEMENTAL_RULESET_IDS = [SOOP_RULESET_ID, PLAYER_COMPAT_RULESET_ID, "publisher_slots"];
 const MANAGED_RULESET_IDS = [
   PRIMARY_RULESET_ID,
   FALLBACK_RULESET_ID,
-  SOOP_RULESET_ID,
-  PLAYER_COMPAT_RULESET_ID,
+  ...SUPPLEMENTAL_RULESET_IDS,
 ];
 const ALLOWLIST_RULE_ID_START = 900001;
 const MAX_DISABLED_SITES = 1000;
@@ -715,12 +715,11 @@ async function applySettings() {
     settings.enabled &&
     (!enabledRulesets.includes(PRIMARY_RULESET_ID) ||
       enabledRulesets.includes(FALLBACK_RULESET_ID) ||
-      !enabledRulesets.includes(SOOP_RULESET_ID) ||
-      !enabledRulesets.includes(PLAYER_COMPAT_RULESET_ID))
+      SUPPLEMENTAL_RULESET_IDS.some((id) => !enabledRulesets.includes(id)))
   ) {
     try {
       await chrome.declarativeNetRequest.updateEnabledRulesets({
-        enableRulesetIds: [PRIMARY_RULESET_ID, SOOP_RULESET_ID, PLAYER_COMPAT_RULESET_ID],
+        enableRulesetIds: [PRIMARY_RULESET_ID, ...SUPPLEMENTAL_RULESET_IDS],
         disableRulesetIds: [FALLBACK_RULESET_ID],
       });
     } catch (error) {
@@ -729,7 +728,7 @@ async function applySettings() {
         error,
       );
       await chrome.declarativeNetRequest.updateEnabledRulesets({
-        enableRulesetIds: [FALLBACK_RULESET_ID, SOOP_RULESET_ID, PLAYER_COMPAT_RULESET_ID],
+        enableRulesetIds: [FALLBACK_RULESET_ID, ...SUPPLEMENTAL_RULESET_IDS],
         disableRulesetIds: [PRIMARY_RULESET_ID],
       });
     }

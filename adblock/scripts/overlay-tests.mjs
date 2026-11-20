@@ -48,7 +48,7 @@ await test("Hijack protection retains permissions and separates isolated setting
   const registrations = manifest.content_scripts.filter((script) => script.css?.includes("cosmetic.css"));
   assert.equal(registrations.length, 1);
   assert.deepEqual(registrations[0].matches, ["http://*/*", "https://*/*"]);
-  assert.deepEqual(registrations[0].js, ["content.js", "hijack-patterns.js", "hijack-guard.js"]);
+  assert.deepEqual(registrations[0].js, ["content.js", "ad-slot-media.js", "hijack-patterns.js", "hijack-guard.js"]);
   assert.equal(registrations[0].run_at, "document_start");
   assert.equal(registrations[0].all_frames, true);
   assert.equal(registrations[0].match_about_blank, true);
@@ -63,7 +63,7 @@ await test("Hijack protection retains permissions and separates isolated setting
   assert.equal(mainGuard.match_about_blank, true);
   assert.doesNotMatch(readText("content.js"), /data-cl-overlay|ea0Lbe|(?:window|globalThis)\.open\s*=/);
   assert.deepEqual(manifest.declarative_net_request.rule_resources.map((rule) => rule.id),
-    ["easylist", "ads", "soop", "player_compat"], "Only the separately scoped player compatibility ruleset is added");
+    ["easylist", "ads", "soop", "player_compat", "publisher_slots"]);
 });
 
 const fixtureHtml = `<!doctype html><html><head><meta charset="utf-8"><title>Offline overlay fixture</title>

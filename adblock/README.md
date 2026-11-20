@@ -9,6 +9,8 @@ Chrome 122 이상을 지원합니다.
 - KoreanList+EasyList 기반 네트워크 규칙 56,058개로 국내외 광고 요청 차단
 - 예외와 무관한 범용 cosmetic 선택자 13,360개를 정적 CSS로 적용
 - 조건부 범용 선택자 301개와 도메인별 선택자 참조 16,701개를 현재 호스트의 예외 658개 및 `$generichide` 호스트 182개와 대조한 뒤 동적으로 적용
+- 광고 슬롯 안에서 재생되는 영상·오디오를 멈추고, 광고용 전면 대화상자를 닫아 본문 입력을 복구합니다. 일반 숨김 필터가 꺼진 사이트에서는 이 처리가 중지됩니다.
+- 카카오 AdFit 스크립트와 FM코리아의 NHN·자체 광고 프레임을 기본 목록과 소형 대체 목록에서 모두 차단합니다.
 - FM코리아처럼 공개 목록만으로 남는 광고 영역은 검증된 사이트 전용 CSS로 보완
 - 공식 uBlock Origin Lite 2026.729.1529의 GPL scriptlet 번들을 YouTube에 한정해 사용
 - MAIN world에서 player fetch/XHR의 광고 필드와 요청 문맥(`clientScreen`, `lactMilliseconds`, 재시도 표식)을 함께 처리
@@ -69,6 +71,7 @@ node scripts/chrome-load-check.mjs
 node scripts/soop-tests.mjs --chrome
 node scripts/sexkbj-tests.mjs --chrome
 node scripts/chzzk-tests.mjs --chrome
+node scripts/ad-slot-tests.mjs
 node scripts/overlay-tests.mjs --chrome
 node scripts/player-compat-tests.mjs --chrome
 node scripts/hijack-tests.mjs --chrome

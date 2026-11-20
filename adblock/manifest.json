@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "가벼운 광고 차단기",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "minimum_chrome_version": "122",
   "description": "광고 네트워크 요청, 흔한 광고 영역, YouTube 플레이어 광고를 차단하는 가벼운 Chrome 확장 프로그램입니다.",
   "icons": {
@@ -51,6 +51,7 @@
       ],
       "js": [
         "content.js",
+        "ad-slot-media.js",
         "hijack-patterns.js",
         "hijack-guard.js"
       ],
@@ -121,6 +122,11 @@
         "id": "player_compat",
         "enabled": true,
         "path": "rules/player-compat.json"
+      },
+      {
+        "id": "publisher_slots",
+        "enabled": true,
+        "path": "rules/publisher-slots.json"
       }
     ]
   }

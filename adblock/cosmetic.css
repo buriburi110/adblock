@@ -27,3 +27,21 @@ html.lae-active.lae-generic-active iframe[src*="outbrain.com"] {
   width: 0 !important;
   height: 0 !important;
 }
+
+/* Recognized publisher slots and explicitly identified ad containers. */
+html.lae-active.lae-generic-active :is(
+  ins.adsbygoogle,
+  ins.kakao_ad_area,
+  [id^="div-gpt-ad-"],
+  iframe[id^="google_ads_iframe_"],
+  iframe[id^="aswift_"][name^="aswift_"],
+  [data-google-query-id],
+  [data-ad-slot]:not([data-ad-slot=""]),
+  .ad-interstitial, .interstitial-ad, .sticky-ad, .video-ad-container,
+  :is(aside, section, div, dialog, iframe, [role="dialog"], [role="complementary"]):is(
+    [aria-label="advertisement" i], [aria-label="광고"]
+  )
+) {
+  display: none !important;
+  --lae-ad-slot: 1 !important;
+}
