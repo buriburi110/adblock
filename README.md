@@ -8,9 +8,11 @@
 
 ![Manifest V3](https://img.shields.io/badge/Manifest-V3-4285F4?logo=googlechrome&logoColor=white)
 ![Chrome 122+](https://img.shields.io/badge/Chrome-122%2B-34A853?logo=googlechrome&logoColor=white)
-![Version](https://img.shields.io/badge/version-1.11.0-blue)
+![Version](https://img.shields.io/badge/version-1.10.0-blue)
 ![License](https://img.shields.io/badge/license-GPL--3.0-orange)
 ![No build step](https://img.shields.io/badge/build-none%20required-lightgrey)
+
+**한국어** | [English](README.en.md) | [简体中文](README.zh-CN.md)
 
 </div>
 
@@ -28,10 +30,8 @@ Chrome의 공식 `declarativeNetRequest` API와 로컬 콘텐츠 스크립트만
 |---|---|---|
 | 🛡️ | **네트워크 차단** | KoreanList+EasyList 기반 정적 DNR 규칙 **56,058개** |
 | 🧹 | **광고 영역 숨김** | 범용 CSS 선택자 **13,360개**와 도메인별 선택자 **16,701개**를 사이트 예외와 대조해 적용 |
-| 📢 | **광고 슬롯** | 숨긴 광고의 재생을 멈추고 전면 광고 창을 닫아 본문 입력을 복구 |
 | ▶️ | **YouTube** | 공식 uBlock Origin Lite scriptlet 번들(수정 없음)로 플레이어·인피드·Shorts 광고 처리 |
 | 📺 | **치지직** | 공개 라이브를 고화질 HLS로 재생하고 플레이어 광고 정책 처리 |
-| 🎬 | **AVsee** | 확인된 `04.avsee.is` 플레이어 버전의 광고 검사 요청에 한해 적용 |
 | 🎈 | **SOOP** | List-KR 기반 보조 규칙 9개, VOD 애드벌룬 배너 제거 |
 | 🪤 | **클릭 납치 방지** | 영상 위 투명 덮개, 광고 링크 이동, 원치 않는 팝업 차단 |
 | 🔢 | **차단 카운터** | 현재 탭에서 차단한 요청 수를 아이콘 배지와 팝업에 표시 |
@@ -40,8 +40,6 @@ Chrome의 공식 `declarativeNetRequest` API와 로컬 콘텐츠 스크립트만
 ## 🚀 설치
 
 > 아직 Chrome 웹 스토어에 올라가 있지 않습니다. 개발자 모드로 직접 불러와야 합니다.
-
-Mac과 Windows의 Chrome에서 같은 확장 폴더를 사용합니다.
 
 1. 저장소를 내려받습니다.
    ```bash
@@ -190,7 +188,6 @@ node scripts/import-ubol-youtube.mjs /path/to/uBOLite-release
 
 | 버전 | 내용 |
 |---|---|
-| **1.11.0** | 광고 미디어 정지, 전면 광고 대화상자 닫기, 카카오 AdFit 및 펨코 광고 프레임 규칙 추가 |
 | **1.10.0** | 클릭 납치 방지: 덮개·링크·팝업 보호, 강화 모드, 페이지별 허용·복구 |
 | 1.9.5 | 특정 플레이어 광고 검사 스크립트 호환 규칙 |
 | 1.9.4 | `div[data-cl-overlay]` 클릭 덮개 숨김 |
